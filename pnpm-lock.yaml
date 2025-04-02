@@ -14,6 +14,9 @@ dependencies:
   '@slidev/theme-seriph':
     specifier: latest
     version: 0.25.0
+  slidev-addon-fancy-arrow:
+    specifier: ^0.8.0
+    version: 0.8.0(typescript@5.8.2)
   slidev-theme-academic:
     specifier: ^2.1.0
     version: 2.1.0(postcss@8.5.3)(vite@5.4.15)
@@ -5332,6 +5335,15 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /slidev-addon-fancy-arrow@0.8.0(typescript@5.8.2):
+    resolution: {integrity: sha512-o5OppRwO+MQltcXIWXKENYd3a4XKDJrhddJ/MKmTVY7s8t+bwsOHD7hwOdIxhNzF+LxnO+Jhzwqj5Nb8O96t+g==}
+    dependencies:
+      roughjs: 4.6.6
+      vue: 3.5.13(typescript@5.8.2)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /slidev-theme-academic@2.1.0(postcss@8.5.3)(vite@5.4.15):
     resolution: {integrity: sha512-C1pbu9+6mv01ZMX+HJnagO10ZqDpd3yNthWOmEviKRytjs0K9Vsue+30W9fmB72wxbVpfGpRFRWU94WFzEJDIw==}
