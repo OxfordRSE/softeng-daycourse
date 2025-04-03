@@ -86,12 +86,16 @@ layout: two-cols-header
 
 ::left::
 
+<div class="h-10"></div>
+
 In 2012 a software glitch in the trading system of Knight Capital, one of the largest U.S. trading firms, led to a loss of **$440 million** in just 30 minutes.
 - New code changes up until it went live
 - Changes activated old test code
 - Old code on single server produced thousands of incorrect stock purchase orders very rapidly
 
 ::right::
+
+<div class="h-15"></div>
 
 ::center
 
@@ -164,7 +168,7 @@ rightClass: "justify-center ml-10"
 
 ```python {all|1|2-11|12|14-16}
 def add3(a, b, c):
-	”””Add three numbers
+	"""Add three numbers
 
 	This code adds three numbers together
 
@@ -173,7 +177,7 @@ def add3(a, b, c):
 
 	Returns:
 		Sum of three numbers
-	”””
+	"""
 	...
 
 def test_add3(a, b, c):

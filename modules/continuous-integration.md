@@ -91,7 +91,7 @@ class: "gap-4"
 “… density functional theory nuclear magnetic resonance calculations established the relative configurations of compounds 1 and 2 and revealed that the calculated shifts **depended on the operating system** when using the “Willoughby–Hoye” Python scripts to streamline the processing of the output files, a previously unrecognized flaw that could lead to incorrect conclusions.”
 ::
 
-<div class="absolute border border-color-black top-95 left-27 w-80 p-4">
+<div class="absolute border border-color-black top-95 left-27 w-80 p-4 text-center">
 The issue was due to
 <b>different sorting of file names</b>
 on <b>different operating systems</b>

@@ -57,10 +57,12 @@ Greg Wilson, SWC
 ::centralise::
 
 ::center
-<img src="../img/git-logo.png" alt="Git logo" width="35%">
-<div class="flex w-100% justify-center">
-  <img src="../img/svn-logo.png" alt="SVN logo" width="20%">
-  <img src="../img/mercurial-logo.png" alt="Mercurial logo" width="20%">
+<div class="dark:bg-gray-200 pt-3 w-50%">
+  <img src="../img/git-logo.png" alt="Git logo" width="70%">
+  <div class="flex w-100% justify-center">
+    <img src="../img/svn-logo.png" alt="SVN logo" width="40%">
+    <img src="../img/mercurial-logo.png" alt="Mercurial logo" width="40%">
+  </div>
 </div>
 ::
 

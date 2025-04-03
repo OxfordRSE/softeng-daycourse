@@ -2,8 +2,7 @@
 
 Example usage:
 ---
-layout: "two-cols-header"
-layoutClass: "gap-4"
+layout: instruction
 leftClass: "items-start justify-start"
 rightClass: "items-end justify-end"
 ---
@@ -33,7 +32,7 @@ Note that class names are tailwindcss classes
     <div class="col-left flex flex-col justify-center" :class="leftClass">
       <slot name="left" />
     </div>
-    <div class="col-right bg-gray-100 p-2" :class="rightClass">
+    <div class="col-right bg-gray-100 dark:bg-gray-600 dark:border dark:border-color-gray-400 p-2" :class="rightClass">
       <slot name="right" />
     </div>
     <div class="col-bottom">
