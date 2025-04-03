@@ -266,6 +266,7 @@ layout: instruction
 ```mermaid
 gitGraph BT:
     commit id: 'Initial'
+    commit id: 'Second'
     branch feature
     commit id: 'Feature'
     checkout main

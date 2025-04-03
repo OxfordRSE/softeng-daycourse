@@ -120,7 +120,39 @@ layout: instruction
 
 ::left::
 
-<img src="../img/ci_matrix.png" />
+<div class="text-sm">
+<i>Example:</i>
+</div>
+
+<div class="text-sm w-full max-w-[80%] mx-auto leading-none table-tight">
+
+| | ubuntu | windows | macos |
+|--|:--:|:--:|:--:|
+| python 3.9 | ❌ | ❌ | ❌ |
+| python 3.10 | ✅ | ❌ | ✅ |
+| python 3.11 | ✅ | ❌ | ✅ |
+| python 3.12 | ✅ | ❌ | ✅ |
+
+<div class="h-5" />
+
+</div>
+
+```yaml
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+            os: [ubuntu-latest, windows-latest, macos-latest]
+            python-version: [3.9, 3.10, 3.11, 3.12]
+```
+
+<div class="absolute border border-gray-400 left-85 top-90">
+```yaml
+on:
+  workflow_dispatch:
+```
+</div>
 
 ::right::
 
@@ -150,6 +182,23 @@ Changes to the documentation (or code) can trigger documentation builds
 
 ---
 
+# Documents
+
+**GitHub Pages** - Host static HTML documents
+
+Host documents on GitHub and publish them on GitHub Pages
+
+<div class="h-8" />
+
+:: center
+These slides are hosted on GitHub Pages!
+
+https://github.com/OxfordRSE/softeng-daycourse
+::
+
+---
+
+
 # Publish Python packages
 
 Automatically publish to the Python Package Index (PyPI)
@@ -174,5 +223,6 @@ Triggered builds of Windows / MacOS / Linux applications
 
 :: center
 For example:
+
 https://github.com/kraemer-lab/GRAPEVNE/releases
 ::

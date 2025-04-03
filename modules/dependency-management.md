@@ -165,7 +165,7 @@ rightClass: "items-center justify-center"
 
 ::right::
 
-<div class="flex flex-col items-center gap-0 bg-green-50 dark:bg-green-800 border border-black dark: border-white rounded-xl p-4">
+<div class="flex flex-col items-center gap-0 bg-green-50 dark:bg-green-800 border border-black dark:border-white rounded-xl p-4">
   <p><b>Software B</b></p>
   <p>numpy v2</p>
   <p>Python 3.13</p>
