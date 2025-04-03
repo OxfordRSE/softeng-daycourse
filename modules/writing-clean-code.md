@@ -320,10 +320,15 @@ Ruff can do both:
 
 <div class="h-10" />
 
-**A comment on workspaces in Matlab / R:**
+**A comment on workspaces in JuPyter / Matlab / R:**
 - A script / program records a series of computational steps
 - Workspaces are designed to resume previous sessions (persistent state)
 - This can introduce manual steps that are <span v-mark.underline.orange="1">not recorded</span>, making it <span v-mark.underline.red="2">impossible to reproduce</span> the previous result(s)
+
+**Regularly 'run from the top'**
+- Select 'Rull All' cells or the equivalent when you start work for the day
+- Fix any problems before you continue creating
+- If it doesn't take long to run, _always_ run all cells
 
 ---
 layout: instruction
