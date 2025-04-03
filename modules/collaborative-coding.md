@@ -118,12 +118,3 @@ Clone and test manually
 
 Instructor demo:
 - Check tests in another repository
-
----
-
-# Automation and Collaborative Coding
-
-- Project management with Github
-- Collaborative Coding
-- **Continuous Integration**
-- Workflow managers

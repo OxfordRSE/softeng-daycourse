@@ -162,7 +162,7 @@ layout: "two-cols-header"
 <div class="p-4">
 ```python
 def celsius_to_fahrenheit(celsius):
-	”””Convert celsius to Fahrenheit”””
+	"""Convert celsius to Fahrenheit"""
 	return 32 + 1.8 * celsius
 ```
 </div>
@@ -190,7 +190,7 @@ layout: "two-cols-header"
 <div class="p-4">
 ```python
 def add3(a, b, c):
-	“””Add three numbers
+	"""Add three numbers
 
     A longer description of the
     function, if one is necessary.
@@ -200,7 +200,7 @@ def add3(a, b, c):
 
 	Returns:
 		Sum of three numbers
-	“””
+	"""
 	...
 ```
 </div>
@@ -282,30 +282,28 @@ explain <b>why</b> <i>(provide context)</i>
 ---
 
 # Documentation
-### Tools that can help us…
 
-Linters
-  - Compares your code to a standard (e.g. PEP)
-  - Identifies programming errors, bugs, stylistic errors
-Auto-formatters
-  - Applies stylistic conventions, e.g.
+### Linters
+- Compares your code to a standard (e.g. PEP)
+- Identifies programming errors, bugs, stylistic errors
 
-```python
-dict.get(v1+v2*dict[‘key’])
-```
+<div class="h-5" />
 
-      becomes
+### Auto-formatters
+- Applies stylistic conventions, e.g.
+  ```python
+  dict.get(v1+v2*dict[‘key’])
+  ```
+    becomes
+  ```python
+  dict.get(v1 + v2 * dict["key"])
+             ^ ^  ^ ^     ^   ^
+  ```
+- Saves time
+- You don’t have to worry about remembering all of the rules
+- Reduces decision making
 
-```python
-dict.get(v1 + v2 * dict["key"])
-           ^ ^  ^ ^     ^   ^
-```
-
-    - Saves time
-    - You don’t have to worry about remembering all of the rules
-    - Reduces decision making
-
-<div class="absolute top-20 right-10 w-[30%] border">
+<div class="absolute top-25 right-10 w-[30%] border">
 Ruff can do both:
 <ul>
 <li><code>pip install ruff</code></li>

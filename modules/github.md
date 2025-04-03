@@ -104,7 +104,9 @@ Maintenance
 # Licensing
 
 ::center
-<img src="../img/open-source-licene.png" width="60%">
+<img src="../img/open-source-licene.png" width="55%">
+
+[choosealicense.com](https://choosealicense.com/)
 ::
 
 ---
