@@ -27,15 +27,29 @@ Workflows can entail a **description of required software**, which will be autom
 layout: instruction
 ---
 
-# Install Snakemake
+# Snakemake
 
 ::left::
 
+::center
+Install Snakemake
+::
+
 ::right::
 
-Snakemake can be installed via `pip`:
+Navigate to the course workflows repository:
+[github.com/OxfordRSE/softeng-daycourse-workflows](https://github.com/OxfordRSE/softeng-daycourse-workflows)
+and start a new codespace.
+
+
+Installed `snakemake` with `pip`:
 ```bash
 pip install snakemake
+```
+
+Verify that `snakemake` is installed by typing:
+```bash
+snakemake --version
 ```
 
 ---
@@ -54,7 +68,7 @@ Run a workflow by hand...
 <div class="text-sm">
 Before you start, generate a file with random words:
 ```bash
-python generate.sh
+python generate.py
 ```
 Let's create a frequency plot of the words in that file.
 </div>
@@ -66,7 +80,7 @@ Let's create a frequency plot of the words in that file.
 Use another script to count the frequency of words in the file and output the results:
 <span v-mark.underline.orange="1">
 ```bash
-python count_words.py -in data/file.txt -out output/wc.txt
+python count_words.py -in data/doc.txt -out output/wc.txt
 ```
 </span>
 </p>
@@ -84,17 +98,21 @@ transition: "none"
 
 # Snakemake
 
+Command:
 ```bash
-python count_words.py -in data/file.txt -out output/wc.txt
+python count_words.py -in data/doc.txt -out output/wc.txt
 ```
 
+<br />
+
 <v-click>
+Translated to Snakemake:
 ```python
 rule count_words:
     input:
-        "data/file.txt"
+        "data/doc.txt"
     output:
-        "output/file.txt"
+        "output/doc.txt"
     shell:
         """
         python count_words.py -in {input} -out {output}
@@ -102,15 +120,16 @@ rule count_words:
 ```
 </v-click>
 
-<div class="h-10" />
+<div class="h-7" />
 
 <v-click>
 ```mermaid
 graph LR
-    A[ ]:::hidden --"data/file.txt"--> B[count_words]
-    B --"output/file.txt"--> C[words_chart]
+    A[ ]:::hidden --"data/doc.txt"--> B[count_words]
+    B --"output/doc.txt"--> C[words_chart]
     C --"word_count.txt"--> D([ ]):::hidden
     style A stroke-dasharray: 5 5, fill-opacity:0, stroke-opacity:0;
+    style C stroke-dasharray: 5 5
     style D stroke-dasharray: 5 5, fill-opacity:0, stroke-opacity:0;
 ```
 </v-click>
@@ -119,19 +138,38 @@ graph LR
 
 # Snakemake
 
+Command:
 ```bash
 python words_chart.py
 ```
 
+<br />
+
+<v-click>
+Translated to Snakemake:
 ```python
 rule words_chart:
     input:
-        "output/file.txt"
+        "output/doc.txt"
     output:
         "words_chart.txt"
     script:
         "words_chart.py"
 ```
+</v-click>
+
+<div class="h-7" />
+
+<v-click>
+```mermaid
+graph LR
+    A[ ]:::hidden --"data/doc.txt"--> B[count_words]
+    B --"output/doc.txt"--> C[words_chart]
+    C --"word_count.txt"--> D([ ]):::hidden
+    style A stroke-dasharray: 5 5, fill-opacity:0, stroke-opacity:0;
+    style D stroke-dasharray: 5 5, fill-opacity:0, stroke-opacity:0;
+```
+</v-click>
 
 ---
 layout: two-cols-header
@@ -149,9 +187,9 @@ rule all:
 
 rule count_words:
     input:
-        "data/file.txt"
+        "data/doc.txt"
     output:
-        "output/file.txt"
+        "output/wc.txt"
     shell:
         """
         python count_words.py -in {input} -out {output}
@@ -159,7 +197,7 @@ rule count_words:
 
 rule words_chart:
     input:
-        "output/file.txt"
+        "output/wc.txt"
     output:
         "words_chart.txt"
     script:
@@ -192,10 +230,10 @@ python generate.py -n 100 -w 1000
 ::center
 ```mermaid {scale: 0.8}
 graph TD
-    A[ ] --"data/file1.txt"--> A2[count_words]
-    B[ ] --"data/file2.txt"--> B2[count_words]
-    C[ ] --"data/file3.txt"--> C2[count_words]
-    E[ ] --"data/file100.txt"--> E2[count_words]
+    A[ ] --"data/doc1.txt"--> A2[count_words]
+    B[ ] --"data/doc2.txt"--> B2[count_words]
+    C[ ] --"data/doc3.txt"--> C2[count_words]
+    E[ ] --"data/doc100.txt"--> E2[count_words]
     AGGREGATE[words_chart]
     A2 --> AGGREGATE
     B2 --> AGGREGATE
@@ -226,9 +264,9 @@ rule all:
 
 rule count_words:
     input:
-        "data/file.txt"
+        "data/doc.txt"
     output:
-        "output/file.txt"
+        "output/wc.txt"
     shell:
         """
         python count_words.py -in {input} -out {output}
@@ -236,7 +274,7 @@ rule count_words:
 
 rule words_chart:
     input:
-        "output/file.txt"
+        "output/wc.txt"
     output:
         "words_chart.txt"
     script:
@@ -260,9 +298,9 @@ rule all:
 
 rule count_words:
     input:
-        "data/file.txt"
+        "data/doc.txt"
     output:
-        "output/file.txt"
+        "output/wc.txt"
     shell:
         """
         python count_words.py -in {input} -out {output}
@@ -270,7 +308,7 @@ rule count_words:
 
 rule words_chart:
     input:
-        "output/file.txt"
+        "output/wc.txt"
     output:
         "words_chart.txt"
     script:
@@ -286,9 +324,9 @@ rule all:
 
 rule count_words:
     input:
-        "data/file{n}.txt"
+        "data/doc{n}.txt"
     output:
-        "output/file{n}.txt"
+        "output/wc{n}.txt"
     shell:
         """
         python count_words.py -in {input} -out {output}
@@ -296,7 +334,7 @@ rule count_words:
 
 rule words_chart:
     input:
-        [f"output/file{n}.txt" for n in range(1, 100)]
+        [f"output/wc{n}.txt" for n in range(1, 101)]
     output:
         "words_chart.txt"
     script:
@@ -333,9 +371,9 @@ rule all:
 
 rule count_words:
     input:
-        "data/file{n}.txt"
+        "data/doc{n}.txt"
     output:
-        "output/file{n}.txt"
+        "output/wc{n}.txt"
     shell:
         """
         python count_words.py -in {input} -out {output}
@@ -343,7 +381,7 @@ rule count_words:
 
 rule words_chart:
     input:
-        [f"output/file{n}.txt" for n in range(1, 100)]
+        [f"output/wc{n}.txt" for n in range(1, 101)]
     output:
         "words_chart.txt"
     script:
@@ -352,11 +390,44 @@ rule words_chart:
 
 ---
 
-Scheduling heuristic is applied to
+# Snakemake
+
+- Selective rebuilds
+  - Only runs rules when their inputs (or scripts) are **newer than their outputs**
+  - If nothing is out of date, snakemake does nothing
+
+- Parallelisation
+  ```
+  snakemake --cores 8
+  ```
+
+<div class="h-8" />
+
+::center
+<img src="../img/snakemake-selective-builds.png" width="80%">
+::
+
+---
+layout: two-cols-header
+class: "gap-4"
+rightClass: "items-center justify-center"
+---
+
+# Snakemake
+
+::left::
+
+More benefits:
+- Implementation agnostic
+- Run each rule in its own virtual environment (e.g. `conda` directive)
+- Modularise workflow (and reuse) (`module` directive)
+- Support for `temporary` and `protected` files
+
+Scheduling heuristic is applied to:
 - Maximise parallelization
 - Prefer high priority jobs
 - Subject to resource constraints
-- Disjoint paths in DAG can be executed in parallel
-  ```
-  snakemake –-cores 8
-  ```
+
+::right::
+
+<img src="../img/snakemake-bigjob.png">
