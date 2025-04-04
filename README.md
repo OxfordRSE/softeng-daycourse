@@ -28,6 +28,11 @@ Requirements: a fully charged laptop with git, a github account
 | | Workflow managers |
 | 1600 | OxRSE services |
 
+### Associated repositories:
+
+A number of repositories are associated with this course, providing practical work and examples:
+- https://github.com/OxfordRSE/softeng-daycourse-workflows
+
 ## Presenter notes
 
 The day is designed to be run in either a computer workshop, or a lecture theatre where attendees work on laptops; the am/pm sessions are slip into digestible modules of approx 40 minutes with taught components and a mix of follow-along activities and task / exercises. The day is intended to introduce concepts and provide hands-on experience in tooling.
