@@ -1,3 +1,7 @@
+---
+routeAlias: "testing"
+---
+
 # All Software has Issues
 
 <div class="h-10" />
@@ -13,15 +17,23 @@ It's not enough to know about them, we need to **manage them**
 
 # Testing
 
+<div class="h-10" />
+
 Humans are fallible! Our software will contain defects
   - In requirements, design, as well as code
   - 1-10-150 hours to fix in design/development/production
   - Microsoft Study estimated 10-20 defects per 1000 lines of code
 
+<div class="h-10" />
+
+<v-click>
+
 **Validation**: are we building the right product?
 
 **Verification**: are we building the product right?
-  - Manual testing, unit testing, automated testing, code reviews
+  - Manual testing, automated testing, code reviews
+
+</v-click>
 
 ---
 layout: two-cols-header
@@ -107,10 +119,11 @@ In 2012 a software glitch in the trading system of Knight Capital, one of the la
 
 # The Role of Automation in Software Testing
 
-<div class="h-10" />
+<div class="h-5" />
 
-Manual testing is necessary
-However…
+Manual testing _is_ necessary.
+
+However...
 - Prone to error
 - Can be time-consuming, expensive
 
@@ -140,20 +153,24 @@ celsius_to_fahrenheit(12.34)
 ```
 </v-click>
 
----
-
-# Automated Testing
-
-**Unit tests**: Test specific units of functionality, ensuring expected outputs from given inputs.
-
-```python
-def celsius_to_fahrenheit(celsius):
-    return 32 + 1.8 * celsius
-
+<v-click at="2">
+<div>
+```python {none|all|none}
 def test_celsius_to_fahrenheit():
 	assert celsius_to_fahrenheit(1.0) == 33.8
     assert celsius_to_fahrenheit(12.34) == 54.212
 ```
+</div></v-click>
+
+<v-click at="3">
+```python
+import numpy as np
+
+def test_celsius_to_fahrenheit():
+	assert np.isclose(celsius_to_fahrenheit(1.0), 33.8)
+    assert np.isclose(celsius_to_fahrenheit(12.34), 54.212)
+```
+</v-click>
 
 ---
 layout: two-cols-header
@@ -211,20 +228,28 @@ def test_add3(a, b, c):
 </v-click>
 
 ---
+transition: "none"
+---
 
-# Test Drive Development (TDD)
-
-<style>
-.default {
-  background-color: #eef9ff;
-}
-</style>
+# Test Driven Development (TDD)
 
 ::centralise::
 
 ::center
-<img src="../img/tdd.png" alt="Test driven development" width="90%" />
+<img src="../img/tdd.png" alt="Test driven development" width="40%" />
 ::
+
+---
+transition: "none"
+---
+
+# Automated Testing
+
+<b>Unit tests</b>: Test specific units of functionality, ensuring expected outputs from given inputs.
+
+<!---
+innocuous change breaks code before release
+-->
 
 ---
 transition: "none"
@@ -236,8 +261,10 @@ transition: "none"
 <b>Unit tests</b>: Test specific units of functionality, ensuring expected outputs from given inputs.
 </div>
 
-<b>Integration (functional) tests</b>: Test functional paths through the code, especially useful for exposing faults in inter-unit interactions.
+<b>Integration (functional) tests</b>: Test functional paths through the code, especially useful for exposing faults in unit interactions.
 
+---
+transition: "none"
 ---
 
 # Automated Testing
@@ -249,6 +276,29 @@ transition: "none"
 </div>
 
 <b>Regression tests</b>: Ensure unchanged program output despite code modifications.
+
+<br />
+
+::center
+
+<v-click>
+<i>
+When working with a <b>legacy</b> codebase,
+<br />start with a few <b>regression tests</b> to ensure
+<br />that the output is not changing.
+</i>
+</v-click>
+
+<br />
+
+<v-click>
+<i>
+<br />Then, start adding <b>unit tests</b> for
+<br />new features or bug fixes.
+</i>
+</v-click>
+
+::
 
 ---
 
@@ -262,6 +312,10 @@ pytest: a framework for automated testing
 - Run with `pytest` (or `pytest -v` for an itemised view)
 
 Testing investment should match the software's complexity and usage
+
+<!--
+PyTest provides a convenient report across all tests
+-->
 
 ---
 layout: instruction
@@ -278,8 +332,9 @@ Write some unit tests
 ::right::
 
 - Instructor: demo pytest install and running the test suite
-- Write tests for the smoothie function (tip: read the docstring and try out the function to see how it behaves)
+- Write tests for the `smoothie` function in the file `smoothie.py` (tip: read the docstring and try out the function to see how it behaves)
 - Run the test suite
 - Write a test that fails (to see the output)
-- Think of edge cases that can be added to the test suite (e.g. negative numbers, etc.)
-- Can the function be improved?
+- Think of edge cases that can be added to the test suite (e.g. empty ingredients list?)
+
+Want more practice? Check out `utils.py` and `test_utils.py`.

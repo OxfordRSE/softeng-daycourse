@@ -1,6 +1,7 @@
 ---
 layout: two-cols-header
 rightClass: ""
+routeAlias: "version-control"
 ---
 
 # Code management & collaboration
@@ -139,10 +140,88 @@ layout: two-cols-header
 ::
 
 ---
+layout: two-cols-header
+---
+
+# Staging and commits
+
+::centralise::
+
+::left::
+
+<div style="position: relative; top: 0px; width: 40%; height: auto; margin: auto;">
+
+  <div class="flex flex-col items-center space-y-10">
+    <div class="flex space-x-1">
+    <div class="w-50 h-15 bg-orange-500 text-white flex items-center justify-center rounded">Working directory</div>
+    </div>
+    <div class="flex space-x-1">
+      <div class="w-50 h-15 bg-amber-500 text-white flex items-center justify-center rounded">Staging area</div>
+    </div>
+    <div class="flex space-x-1">
+      <div class="w-50 h-15 bg-yellow-500 text-white flex items-center justify-center rounded">Repository</div>
+    </div>
+  </div>
+
+  <FancyArrow
+    x1="-14"
+    y1="30"
+    x2="-75"
+    y2="65"
+    arc="-0.4"
+    head-size="15"
+  />
+  
+  <div class="absolute top-16.5 left--30">
+    <code>git add</code>
+  </div>
+  
+  <FancyArrow
+    x1="-75"
+    y1="95"
+    x2="-14"
+    y2="130"
+    arc="-0.4"
+    head-size="15"
+  />
+  
+  <FancyArrow
+    x1="188"
+    y1="130"
+    x2="250"
+    y2="165"
+    arc="0.4"
+    head-size="15"
+  />
+
+  <div class="absolute top-41.5 left-50 w-30">
+    <code>git commit</code>
+  </div>
+  
+  <FancyArrow
+    x1="250"
+    y1="195"
+    x2="188"
+    y2="230"
+    arc="0.4"
+    head-size="15"
+  />
+  
+</div>
+
+::right::
+
+<div class="h-10" />
+
+- **Staging**: Select files to include in the next Commit (`git add`)
+
+- **Commit**: Save the staged files to the repository (`git commit`) with a message describing the changes
+
+---
 layout: instruction
 ---
 
-# Version control
+# Instructor demo
 
 ::left::
 
@@ -152,10 +231,35 @@ Making a commit
 
 ::right::
 
-Instructor demo:
-- Make change to a repository
-- Stage, Commit using CLI
-- Indicate git UI
+::small
+
+- Check changes in the repository
+```bash
+git status            # check status
+git diff              # show changes
+```
+
+- Stage changes you want to keep
+```bash
+git add <file>        # specific file
+git add -u            # all 'tracked' files
+git add .             # all files
+```
+
+- Revert changes you don't want
+```bash
+git restore <file>    # supports <file>, -u, .
+```
+
+- Commit using CLI
+```bash
+git commit -m "Commit message"
+git log               # show commit history
+```
+
+- Much of this can be done using a GUI, e.g. GitHub Desktop, VS Code.
+
+::
 
 ---
 
@@ -218,7 +322,7 @@ gitGraph BT:
 - Easy to discard unwanted features
 
 ::center
-<br>To change branches: `git checkout <branch_name>`
+<br>To change branches: `git switch <branch_name>`
 ::
 
 ---
@@ -234,15 +338,15 @@ gitGraph
   branch develop
   commit id: "B"
   branch big_feature
-  commit id: "F"
-  checkout develop
   commit id: "C"
+  checkout develop
+  commit id: "D"
   checkout main
   merge develop tag: "v1.1"
   checkout develop
   branch small_feature
-  commit id: "D"
   commit id: "E"
+  commit id: "F"
   checkout big_feature
   commit id: "G"
   checkout develop
@@ -275,8 +379,23 @@ gitGraph BT:
 ::
 
 ::right::
+::small
 
 - Make a change, stage and commit to the main branch directly
+  - `git add requirements.txt`
+  - `git commit -m "Add requirements.txt"`
 - Create a feature branch
-- Make a change, stage and commit to the feature branch
-- Merge your feature branch back into main
+  - `git switch -c feature1`
+- Stage and commit all remaining changes to the feature branch
+  - `git add .`
+  - `git commit -m "Tidy-up project"`
+- Switch branches and take a look at the differences 
+  - `git switch main`
+- Merge your feature branch into main
+  - `git merge feature1`
+
+<!--
+The '-c' flag on 'git switch' creates a new branch and switches to it.
+-->
+
+::

@@ -15,5 +15,8 @@
     "slidev-theme-academic": "^2.1.0",
     "vue": "^3.5.13"
   },
-  "packageManager": "pnpm@8.15.4+sha1.c85a4305534f76d461407b59277b954bac97b5c4"
+  "packageManager": "pnpm@8.15.4+sha1.c85a4305534f76d461407b59277b954bac97b5c4",
+  "devDependencies": {
+    "playwright-chromium": "^1.52.0"
+  }
 }

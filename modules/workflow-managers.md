@@ -1,3 +1,7 @@
+---
+routeAlias: "workflow-managers"
+---
+
 # Workflow Managers
 
 - Manage larger pipelines

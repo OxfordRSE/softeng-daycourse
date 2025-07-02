@@ -4,8 +4,7 @@ theme: academic
 # background: 002147
 defaults:
   layout: standard
-layout: cover
-title: Fundamentals of Software Engineering for Researchers
+title: Crash Course on Software Engineering for Researchers
 info: |
     One-day course description
 class: text-center
@@ -13,15 +12,56 @@ transition: slide-left
 mdc: true
 addons:
   - fancy-arrow
+routeAlias: morning
 ---
 
-# Fundamentals of Software Engineering for Researchers
+::center
+# Crash Course on Software Engineering
+# for Researchers
+::
 
-### Oxford Research Software Engineering Group (OxRSE)
+::centralise::
+
+## Morning Session
 
 ---
 src: ./pages/oxrse.md
 ---
+
+---
+layout: three-panels-header
+---
+
+# Help beyond the course
+
+::left::
+::center
+
+[Discussion Forum](https://github.com/orgs/OxfordRSE/discussions)
+
+Ask questions, share ideas, and discuss topics related to our courses.
+
+::
+
+::middle::
+::center
+
+[Training materials](https://train.rse.ox.ac.uk/)
+
+Free to access online materials
+
+::
+
+::right::
+::center
+
+[Course listings](https://www.rse.ox.ac.uk/training)
+
+Upcoming courses and events
+
+Mailing list
+
+::
 
 ---
 src: ./pages/morning-toc.md
@@ -49,10 +89,10 @@ src: ./pages/codespaces-intro-python.md
 
 # Reproducibility and collaboration
 
-- **Writing Clean Code**
-- Testing
-- Versioning / dependency management
-- Version Control
+- **<Link to="writing-clean-code" title="Writing Clean Code" />**
+- <Link to="testing" title="Testing" />
+- <Link to="dependency-management" title="Dependency management" />
+- <Link to="version-control" title="Version Control" />
 
 ---
 src: ./modules/writing-clean-code.md
@@ -62,10 +102,10 @@ src: ./modules/writing-clean-code.md
 
 # Reproducibility and collaboration
 
-- Writing Clean Code
-- **Testing**
-- Versioning / dependency management
-- Version Control
+- <Link to="writing-clean-code" title="Writing Clean Code" />
+- **<Link to="testing" title="Testing" />**
+- <Link to="dependency-management" title="Dependency management" />
+- <Link to="version-control" title="Version Control" />
 
 ---
 src: ./modules/testing.md
@@ -75,10 +115,10 @@ src: ./modules/testing.md
 
 # Reproducibility and collaboration
 
-- Writing Clean Code
-- Testing
-- **Versioning / dependency management**
-- Version Control
+- <Link to="writing-clean-code" title="Writing Clean Code" />
+- <Link to="testing" title="Testing" />
+- **<Link to="dependency-management" title="Dependency management" />**
+- <Link to="version-control" title="Version Control" />
 
 ---
 src: ./modules/dependency-management.md
@@ -88,10 +128,10 @@ src: ./modules/dependency-management.md
 
 # Reproducibility and collaboration
 
-- Writing Clean Code
-- Testing
-- Versioning / dependency management
-- **Version Control**
+- <Link to="writing-clean-code" title="Writing Clean Code" />
+- <Link to="testing" title="Testing" />
+- <Link to="dependency-management" title="Dependency management" />
+- **<Link to="version-control" title="Version Control" />**
 
 ---
 src: ./modules/version-control.md

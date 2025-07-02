@@ -23,7 +23,7 @@ Need to ensure transparency, reproducibility, potential for expansion and collab
 
 Quite scary - suddenly a great emphasis on your code; you want it to be correct, you need it to be well documented.. Or even yourself in 6 months when your writing up
 
-Make life easy for yourself NOW and strcutreu your code
+Make life easy for yourself NOW and structure your code
 -->
 
 ---
@@ -74,9 +74,13 @@ transition: "none"
 ::
 
 <!--
-Highly unrealistic; also treats software developed as disposable; software increasingly DEMANDED to be open access published by journals, reproduce your results
+'Waterfall' model
 
-Understandable… there has been a crisis in confidence of the publishing model - the reproducilbiity crisis;
+Highly unrealistic; also treats software developed as disposable
+
+Software increasingly DEMANDED to be open access published by journals, reproduce your results
+
+With pressure to published, there has been a reproducilbiity crisis in science
 -->
 
 ---

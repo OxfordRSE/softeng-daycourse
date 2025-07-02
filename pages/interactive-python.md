@@ -1,12 +1,14 @@
 ---
-layout: "two-cols-header"
+layout: instruction
 ---
 
 # Interactive workshop
 
 ::left::
 
-<img src="../img/classroom.png" alt="Classroom" style="width: 95%;"/>
+::center
+Instruction slide
+::
 
 ::right::
 
@@ -38,6 +40,6 @@ Interactive workshop pre-requisites:
 If you haven’t already, please ensure that you have these now...
 ::
 
-<div class="absolute top-70 right-10 w-[20%]">
-Slides QR code
+<div class="absolute top-48 right-10 w-[20%]">
+<img src="../img/oxrse-softeng.png" alt="http://blog.oxrse.uk/softeng-daycourse/" style="width: 100%;"/>
 </div>

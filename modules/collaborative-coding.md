@@ -1,5 +1,6 @@
 ---
 layout: two-cols-header
+routeAlias: "collaborative-coding"
 ---
 
 # Collaborative Code Development Models
@@ -7,36 +8,59 @@ layout: two-cols-header
 ::left::
 
 ::center
-Shared repository model
+
+Shared repository model<br />
 (common in private projects)
-<img src="../img/github-shared.png" alt="Shared repository model" width="60%">
+
+<div class="h-4" />
+<img src="../img/github-shared-repo.png" alt="Shared repository model" width="210px">
 ::
 
 ::right::
 
 ::center
-Fork and pull model
+
+<div v-click>
+
+Fork and pull model<br />
 (popular in open source)
-<img src="../img/github-fork.png" alt="Shared repository model" width="60%">
+
+<div class="h-4" />
+<img src="../img/github-fork-pull.png" alt="Shared repository model" width="350px">
+
+</div>
 ::
 
 ---
 
 # Collaborative project
 
-<div class="bg-yellow-300">
-(github collaborative project url)
-</div>
-<br>
-<div class="bg-yellow-300">
-(this is a structured repo where attendees will submit their own code [small function] via a pull request to see the PR / code review process)
-</div>
+### ZooShowcase
+
+https://github.com/OxfordRSE/softeng-daycourse-zoo
+
+Add an animal to the zoo. Copy (and modify) one of the existing animals (e.g. `src/zoo/elephant.py`) to create a new animal (e.g. `src/zoo/kangaroo.py`).
+
+```python
+# src/zoo/kangaroo.py
+from animal import Animal
+
+class Kangaroo(Animal):
+    def __init__(self, name="Roo"):
+        super().__init__(name, species="Kangaroo")
+
+    def sound(self):
+        return "thumps"
+
+    def action(self):
+        return "hops around happily."
+```
 
 ---
 layout: instruction
 ---
 
-# Pull Requests
+# Github
 
 ::left::
 
@@ -47,7 +71,8 @@ Pull Request
 ::right::
 
 Instructor demo / follow-along:
-- Fork repository
+- Fork repository<br />
+  <small>[github.com/OxfordRSE/softeng-daycourse-zoo](https://github.com/OxfordRSE/softeng-daycourse-zoo)</small>
 - Open in codespaces (git clone)
 - Create a feature branch
 

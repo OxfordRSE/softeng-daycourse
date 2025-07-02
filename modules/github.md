@@ -1,10 +1,53 @@
 ---
 layout: two-cols-header
+routeAlias: github
+transition: none
 ---
 
 # Collaborative Code Development
 
 ::left::
+
+<div class="h-4" />
+
+- Upload version-controlled files to a remote server
+- Collaborate with anyone, anywhere in the world
+- Share your code openly (or not!)
+- Protect yourself from disaster
+
+::right::
+
+<img src="../img/github-cloud-1.png" width="100%">
+
+---
+layout: two-cols-header
+transition: none
+---
+
+# Collaborative Code Development
+
+::left::
+
+<div class="h-4" />
+
+- Upload version-controlled files to a remote server
+- Collaborate with anyone, anywhere in the world
+- Share your code openly (or not!)
+- Protect yourself from disaster
+
+::right::
+
+<img src="../img/github-cloud-2.png" width="100%">
+
+---
+layout: two-cols-header
+---
+
+# Collaborative Code Development
+
+::left::
+
+<div class="h-4" />
 
 - Upload version-controlled files to a remote server
 - Collaborate with anyone, anywhere in the world
@@ -14,24 +57,6 @@ layout: two-cols-header
 ::right::
 
 <img src="../img/github-cloud.png" width="100%">
-
----
-layout: instruction
----
-
-# Github
-
-::left::
-
-::center
-Publish to github
-::
-
-::right::
-
-Instructor demo / follow-along:
-- Publish repository to github
-- Brief guided tour of github
 
 ---
 
@@ -48,6 +73,10 @@ Instructor demo / follow-along:
 <img src="../img/github-issue.png" class="border border-color-black" />
 </div>
 
+<!--
+Use this slide to launch into a guided tour of Github
+-->
+
 ---
 layout: two-cols-header
 class: "gap-4"
@@ -63,17 +92,36 @@ rightClass: "items-center"
 
 <div class="h-4" />
 
-Requirements Analysis
+<div style="position: relative; top: 0px; width: 40%; height: auto; margin: auto;">
 
-Design
+  <div class="flex flex-col items-center space-y-3">
+    <div class="flex space-x-1">
+    <div class="w-60 h-10 bg-yellow-400 text-gray-600 flex items-center justify-center rounded">Requirements Analysis</div>
+    </div>
+    <div class="flex space-x-1">
+      <div class="w-60 h-10 bg-yellow-400 text-gray-600 flex items-center justify-center rounded">Design</div>
+    </div>
+    <div class="flex space-x-1">
+      <div class="w-60 h-10 bg-yellow-400 text-gray-600 flex items-center justify-center rounded">Implementation</div>
+    </div>
+    <div class="flex space-x-1">
+      <div class="w-60 h-10 bg-yellow-400 text-gray-600 flex items-center justify-center rounded">Testing</div>
+    </div>
+    <div class="flex space-x-1">
+      <div class="w-60 h-10 bg-yellow-400 text-gray-600 flex items-center justify-center rounded">Release</div>
+    </div>
+    <div class="flex space-x-1">
+      <div class="w-60 h-10 bg-yellow-400 text-gray-600 flex items-center justify-center rounded">Maintenance</div>
+    </div>
+  </div>
 
-Implementation
+  <FancyArrow x1="85" y1="40"  x2="85" y2="51"  head-size="8" color="gray" width="1" roughness="1" />
+  <FancyArrow x1="85" y1="92"  x2="85" y2="103" head-size="8" color="gray" width="1" roughness="1" />
+  <FancyArrow x1="85" y1="144" x2="85" y2="155" head-size="8" color="gray" width="1" roughness="1" />
+  <FancyArrow x1="85" y1="196" x2="85" y2="207" head-size="8" color="gray" width="1" roughness="1" />
+  <FancyArrow x1="85" y1="248" x2="85" y2="259" head-size="8" color="gray" width="1" roughness="1" />
 
-Testing
-
-Release
-
-Maintenance
+</div>
 
 ::right::
 
@@ -128,3 +176,28 @@ Maintenance
 ::center
 <img src="../img/mit-license.png" width="48%">
 ::
+
+---
+layout: instruction
+---
+
+# Github
+
+::left::
+
+Clone your repository and push changes
+
+::right::
+
+Instructor follow-along:
+
+- Create a new repository (Github interface)
+  - Remember to select a license
+- Open a [blank Codespace](https://github.com/codespaces) and clone your repository
+- Add a file, stage and commit
+- Push changes to Github
+```bash
+git push
+```
+
+- Explore commit history (Github interface)

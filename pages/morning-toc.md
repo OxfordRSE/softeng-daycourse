@@ -4,16 +4,16 @@
 
 | | |
 | --- | --- |
-| 0900 | Welcome |
-| 0910 | Why engineer research software? |
-| **0930** | **Morning session - Reproducibility and collaboration** |
+| 0930 | Welcome |
+| 0940 | Why engineer research software? |
+| **1000** | **Morning session - Reproducibility and collaboration** |
 | | Writing clean code |
 | | Testing |
 | | Dependency management |
 | | Version control |
-| 1210 | Lunch |
-| 1300 | OxRSE showcase |
-| 1330 | Afternoon session - Automating tasks and best practices |
-| 1610 | OxRSE services |
+| 1230 | Lunch |
+| 1330 | OxRSE showcase |
+| 1400 | Afternoon session - Automating tasks and best practices |
+| 1700 | OxRSE services |
 
 </div>

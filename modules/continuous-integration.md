@@ -1,3 +1,7 @@
+---
+routeAlias: "continuous-integration"
+---
+
 # Introduction to Continuous Integration (CI)
 
 - **Definition**: Continuous Integration (CI) is an automated process for verifying and integrating code changes.
@@ -22,27 +26,36 @@
 
 ---
 
-# Key Principles of CI (Continued)
-
-- **Frequent Commits**: Developers integrate their changes regularly to avoid complex conflicts.
-- **Integration Machine**: Ensure builds and tests are conducted in a standardised, clean environment.
-- **Visibility and Transparency**: Ensure all build and test results are accessible to the entire team.
-
----
-
 # Continuous Integration Tools
 
-<img src="../img/octocat.png" width="5%" />
+<div class="h-12" />
 
-**GitHub Actions**: A CI/CD tool within GitHub’s platform.
+<div class="grid grid-cols-[50px_auto] gap-4 items-center" v-mark.box.red="1">
+  <img src="../img/github.png" width="50px" />
+  <div>
+    <h2 class="text-xl font-semibold">GitHub Actions</h2>
+    A CI/CD tool within GitHub’s platform.
+  </div>
+</div>
+<div class="h-6" />
 
-<img src="../img/travis-logo.png" width="5%" />
+<div class="grid grid-cols-[50px_auto] gap-4 items-center">
+  <img src="../img/travis-logo.png" width="50px" />
+  <div>
+    <h2 class="text-xl font-semibold">Travis</h2>
+    A popular CI service used in various open-source projects.
+  </div>
+</div>
+<div class="h-6" />
 
-**Travis CI**: A popular CI service used in various open-source projects.
-
-<img src="../img/appveyor-logo.png" width="5%" />
-
-**AppVeyor**: CI/CD tool that allows building, testing, and deploying applications.
+<div class="grid grid-cols-[50px_auto] gap-4 items-center">
+  <img src="../img/appveyor-logo.png" width="50px" />
+  <div>
+    <h2 class="text-xl font-semibold">AppVeyor</h2>
+    CI/CD tool that allows building, testing, and deploying applications.
+  </div>
+</div>
+<div class="h-6" />
 
 *Note*: Each tool has unique and common features. Exploring multiple options is advised.
 
@@ -63,7 +76,9 @@ layout: instruction
 ::left::
 
 ::center
+<div class="border border-color-black">
 <img src="../img/github-action-pytest.png" width="100%" />
+</div>
 ::
 
 <div class="absolute top-43 left-70 w-47 border border-color-black">

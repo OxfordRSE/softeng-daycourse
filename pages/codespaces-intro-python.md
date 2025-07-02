@@ -3,67 +3,22 @@
 ::centralise::
 
 ::center
-<img src="../img/codespaces.png" alt="Codespaces" width="100%"/>
+<img src="../img/codespaces.png" alt="Codespaces" class="border border-gray-300" width="80%"/>
+
+<br />
+<Link to="working-in-your-own-environment" title="Working in your own environment" />
+
 ::
 
----
-layout: instruction
----
+<!--
+codespaces - we will think of them as running on your local machine.
 
-# Start your codespaces...
+not advocate as main development platform
 
-::left::
+github pro gives more minutes
+Free GitHub Pro account for verified learners
+https://github.com/education/students
+https://github.com/education/teachers
 
-<img src="../img/codespaces-blank.png" alt="Codespaces" width="100%"/>
+-->
 
-::right::
-
-Navigate to https://github.com/codespaces
-
-Under **Blank** select **Use this template**
-
----
-layout: instruction
----
-
-# Try using Python...
-
-::left::
-
-<img src="../img/codespaces1.png" alt="Codespaces" width="100%"/>
-
-::right::
-
-Wait for your codespace to load
-
-Select **New File** and call it `main.py`
-
-Populate the file with:
-::center
-```python
-print(“Hello World”)
-```
-::
-
-Run from the terminal:
-::center
-```bash
-python main.py
-```
-::
-
----
-layout: instruction
----
-
-# Stopping your codespace
-
-::left::
-
-<img src="../img/codespaces_shutdown.png" alt="Shutdown codespace" width="100%"/>
-
-::right::
-
-Select **Codespaces**
-
-Select **Stop Current Codespace**

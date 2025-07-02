@@ -4,16 +4,16 @@
 
 | | |
 | --- | --- |
-| 0900 | Welcome / Prerequisites |
-| 0910 | Why engineer research software? |
-| 0930 | Morning session - Reproducibility and collaboration |
-| 1210 | Lunch |
-| 1300 | OxRSE showcase |
-| **1330** | **Afternoon session - Automating tasks and best practices** |
+| 0930 | Welcome |
+| 0940 | Why engineer research software? |
+| 1000 | Morning session - Reproducibility and collaboration |
+| 1230 | Lunch |
+| 1330 | OxRSE showcase |
+| **1400** | **Afternoon session - Automating tasks and best practices** |
 | | Project management with Github |
-| | Collaborative Coding |
 | | Continuous Integration |
+| | Collaborative Coding |
 | | Workflow managers |
-| 1610 | OxRSE services |
+| 1700 | OxRSE services |
 
 </div>

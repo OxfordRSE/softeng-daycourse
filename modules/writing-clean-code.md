@@ -1,15 +1,17 @@
 ---
-layout: "two-cols-header"
-class: "gap-4"
+layout: two-cols-header
+leftClass: m-1
+rightClass: m-1
+routeAlias: writing-clean-code
 ---
 
 # Writing Clean Code
-### Organise your file structure
+### Organise your files
 
 ::left::
 
 ```
-Flat structure
+Flat
 ├─ script.py
 ├─ image_1.jpg
 ├─ script_2.py
@@ -52,9 +54,17 @@ Structured
 ```
 </v-click>
 
+<!--
+Software projects often start as a collection of scripts and assorted files, but will soon grow and become unwieldy. Structuring your projects will not only help you keep track of your files, but also make it easier for others to understand your project.
+
+- Organise files into directories
+- Structuring projects will help you convert your 'collection of scripts' into an installable Python package later on.
+- Mention special files (e.g. pyproject.toml, .gitignore)
+-->
+
 ---
-layout: "two-cols-header"
-class: "gap-4"
+layout: two-cols-header
+class: gap-4
 ---
 
 # Writing Clean Code
@@ -84,7 +94,8 @@ def celsius_to_fahrenheit(celsius):
 <div class="h-10" />
 
 - Makes code more consistent (hence readable)
-- Conventions are usually language-specific (e.g. [PEP 8](https://peps.python.org/pep-0008/))
+- Conventions are usually language-specific
+    - [PEP 8](https://peps.python.org/pep-0008/) - Style Guide for Python Code
     - Python typically uses `snake_case` for function and variable names
 - Conventions can provide context
     - Python typically uses `PascalCase` for class names
@@ -92,7 +103,7 @@ def celsius_to_fahrenheit(celsius):
 - Conventions make code from different projects feel familiar
 - Linters can help us adhere to language standards
 
-<div class="absolute right-10 top-40 w-[20%] text-xl">
+<div class="absolute right-5 top-35 w-[20%] text-xl">
 <pre><code>
 camelCase
 PascalCase
@@ -103,20 +114,43 @@ snake_case
 
 ---
 
-# Writing Clean Code
-### Single responsibility principle
+# Documentation
 
-<div class="h-10" />
+### Linters
+- Compares your code to a standard (e.g. PEP)
+- Identifies programming errors, bugs, stylistic errors
 
-- Long functions conflate purpose, can easily introduce bugs
-- Break long functions into smaller functions
-- This often depends on the level of abstraction of the function
-- Easier to replace smaller functions when new methods become available
-- Rule of thumb: functions should not be too long
+<div class="h-5" />
+
+
+::center
+<div class="absolute top-60" v-click.hide at="1">
+<img src="../img/linter.png" alt="Linter example" width="60%" />
+</div>
+::
+
+
+<v-click at="1">
+
+### Auto-formatters
+- Applies stylistic conventions, e.g.
+  ```python
+  dict.get(v1+v2*dict[‘key’])
+  ```
+    becomes
+  ```python
+  dict.get(v1 + v2 * dict["key"])
+             ^ ^  ^ ^     ^   ^
+  ```
+- Saves time
+- You don’t have to worry about remembering all of the rules
+- Reduces decision making
+
+</v-click>
 
 ---
 layout: two-cols-header
-class: "items-center"
+class: items-center
 ---
 
 # Writing Clean Code
@@ -135,7 +169,7 @@ In code:
 
 ::right::
 
-<img src="../img/grapevne.png" alt="GRAPEVNE" width="80%" />
+<img src="../img/grapevne-py.png" alt="GRAPEVNE" width="80%" />
 
 ---
 
@@ -281,36 +315,15 @@ explain <b>why</b> <i>(provide context)</i>
 
 ---
 
-# Documentation
+# Writing Clean Code
+### Single responsibility principle
 
-### Linters
-- Compares your code to a standard (e.g. PEP)
-- Identifies programming errors, bugs, stylistic errors
+<div class="h-10" />
 
-<div class="h-5" />
-
-### Auto-formatters
-- Applies stylistic conventions, e.g.
-  ```python
-  dict.get(v1+v2*dict[‘key’])
-  ```
-    becomes
-  ```python
-  dict.get(v1 + v2 * dict["key"])
-             ^ ^  ^ ^     ^   ^
-  ```
-- Saves time
-- You don’t have to worry about remembering all of the rules
-- Reduces decision making
-
-<div class="absolute top-25 right-10 w-[30%] border">
-Ruff can do both:
-<ul>
-<li><code>pip install ruff</code></li>
-<li>Linter: <code>ruff check</code></li>
-<li>Auto-formatter: <code>ruff format</code></li>
-</ul>
-</div>
+- Long functions conflate purpose, can easily introduce bugs
+- Break long functions into smaller functions
+- Easier to replace smaller functions when new methods become available
+- Rule of thumb: functions should not be too long
 
 ---
 
@@ -332,7 +345,39 @@ Ruff can do both:
 layout: instruction
 ---
 
-# Exercise
+# Instructor follow-along...
+
+::left::
+::center
+Get up and running with Codespaces
+::
+
+::right::
+Navigate to the project:<br />
+<small>
+<a href="https://github.com/OxfordRSE/softeng-daycourse-cleancode">github.com/OxfordRSE/softeng-daycourse-cleancode</a>
+</small>
+
+- Open in Codespaces
+- Select **New File** and name it `main.py`
+- Populate the file with:
+::center
+```python
+print(“Hello World”)
+```
+::
+- Run from the terminal:
+::center
+```bash
+python main.py
+```
+::
+
+---
+layout: instruction
+---
+
+# Linting and auto-formatters
 
 ::left::
 
@@ -342,13 +387,22 @@ Explore and organise the repository
 
 ::right::
 
-Get the linter to pass!
-- Run a linter on the project to identify issues - try to resolve a few by hand
-- Run an auto-formatter on the project to provide style consistency
+Install the linter:
+::small
+- Install linter: ```pip install pylint```
+- Run linter on `fixme.py`: ```pylint fixme.py```
+::
 
-Further improvements:
-- Add docstrings to functions
+Get the linter to pass!
+::small
+- Try to resolve a few linting errors by hand
+- Run an auto-formatter on the file to provide style consistency
+  - `pip install black`
+  - `black fixme.py`
+  - Compare the file before (`fixme_orig.py`) and after
 - Organise the file structure
-- Use meaningful names
-- Consistent naming conventions
-- Single Responsibility Principle
+::
+
+<!--
+Instructor comment: ruff is faster, but the defaults are not as strict as pylint, and turning all rules on is too verbose.
+-->

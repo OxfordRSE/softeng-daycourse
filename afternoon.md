@@ -4,8 +4,7 @@ theme: academic
 background: #002147
 defaults:
   layout: standard
-layout: cover
-title: Fundamentals of Software Engineering for Researchers
+title: Crash Course on Software Engineering for Researchers
 info: |
     One-day course description
 class: text-center
@@ -13,11 +12,17 @@ transition: slide-left
 mdc: true
 addons:
   - fancy-arrow
+routeAlias: afternoon
 ---
 
-# Fundamentals of Software Engineering for Researchers
+::center
+# Crash Course on Software Engineering
+# for Researchers
+::
 
-### Oxford Research Software Engineering Group (OxRSE)
+::centralise::
+
+## Afternoon Session
 
 ---
 src: ./pages/afternoon-toc.md
@@ -41,10 +46,10 @@ src: ./pages/afternoon-toc.md
 
 # Automation and collaborative coding
 
-- **Project management with Github**
-- Collaborative Coding
-- Continuous Integration
-- Workflow managers
+- **<Link to="github" title="Project management with Github" />**
+- <Link to="collaborative-coding" title="Collaborative Coding" />
+- <Link to="continuous-integration" title="Continuous Integration" />
+- <Link to="workflow-managers" title="Workflow managers" />
 
 ---
 src: ./modules/github.md
@@ -54,23 +59,10 @@ src: ./modules/github.md
 
 # Automation and collaborative coding
 
-- Project management with Github
-- **Collaborative Coding**
-- Continuous Integration
-- Workflow managers
-
----
-src: ./modules/collaborative-coding.md
----
-
----
-
-# Automation and Collaborative Coding
-
-- Project management with Github
-- Collaborative Coding
-- **Continuous Integration**
-- Workflow managers
+- <Link to="github" title="Project management with Github" />
+- **<Link to="continuous-integration" title="Continuous Integration" />**
+- <Link to="collaborative-coding" title="Collaborative Coding" />
+- <Link to="workflow-managers" title="Workflow managers" />
 
 ---
 src: ./modules/continuous-integration.md
@@ -80,10 +72,23 @@ src: ./modules/continuous-integration.md
 
 # Automation and Collaborative Coding
 
-- Project management with Github
-- Collaborative Coding
-- Continuous Integration
-- **Workflow managers**
+- <Link to="github" title="Project management with Github" />
+- <Link to="continuous-integration" title="Continuous Integration" />
+- **<Link to="collaborative-coding" title="Collaborative Coding" />**
+- <Link to="workflow-managers" title="Workflow managers" />
+
+---
+src: ./modules/collaborative-coding.md
+---
+
+---
+
+# Automation and Collaborative Coding
+
+- <Link to="github" title="Project management with Github" />
+- <Link to="collaborative-coding" title="Collaborative Coding" />
+- <Link to="continuous-integration" title="Continuous Integration" />
+- **<Link to="workflow-managers" title="Workflow managers" />**
 
 ---
 src: ./modules/workflow-managers.md
