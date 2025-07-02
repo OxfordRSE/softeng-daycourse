@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@slidev/cli':
     specifier: ^51.4.0
-    version: 51.4.0(@types/markdown-it@14.1.2)(postcss@8.5.3)
+    version: 51.4.0(@types/markdown-it@14.1.2)(playwright-chromium@1.53.2)(postcss@8.5.3)
   '@slidev/theme-default':
     specifier: latest
     version: 0.25.0
@@ -23,6 +23,11 @@ dependencies:
   vue:
     specifier: ^3.5.13
     version: 3.5.13(typescript@5.8.2)
+
+devDependencies:
+  playwright-chromium:
+    specifier: ^1.52.0
+    version: 1.53.2
 
 packages:
 
@@ -1476,7 +1481,7 @@ packages:
     dev: false
     optional: true
 
-  /@slidev/cli@51.4.0(@types/markdown-it@14.1.2)(postcss@8.5.3):
+  /@slidev/cli@51.4.0(@types/markdown-it@14.1.2)(playwright-chromium@1.53.2)(postcss@8.5.3):
     resolution: {integrity: sha512-8AhP8rABvz+gBtKALpFiHi3CtHuN/41WaJy7qGiuheiwDH5jKPIUXn64LUulI1qGK8dxn7znqEUsGUDsFRB2FQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -1528,6 +1533,7 @@ packages:
       pdf-lib: 1.17.1
       picomatch: 4.0.2
       plantuml-encoder: 1.4.0
+      playwright-chromium: 1.53.2
       postcss-nested: 7.0.2(postcss@8.5.3)
       pptxgenjs: 3.12.0
       prompts: 2.4.2
@@ -4967,6 +4973,19 @@ packages:
   /plantuml-encoder@1.4.0:
     resolution: {integrity: sha512-sxMwpDw/ySY1WB2CE3+IdMuEcWibJ72DDOsXLkSmEaSzwEUaYBT6DWgOfBiHGCux4q433X6+OEFWjlVqp7gL6g==}
     dev: false
+
+  /playwright-chromium@1.53.2:
+    resolution: {integrity: sha512-srR0AVmLltaDH6bkEdPlHrqOwtqHI7XkQNm1m20RZNYBIo3L83uv2ENX2SZyYNKtTcT6R//F5moFS7D5UoMINw==}
+    engines: {node: '>=18'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.53.2
+
+  /playwright-core@1.53.2:
+    resolution: {integrity: sha512-ox/OytMy+2w1jcYEYlOo1Hhp8hZkLCximMTUTMBXjGUA1KoFfiSZ+DU+3a739jsPY0yoKH2TFy9S2fsJas8yAw==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   /points-on-curve@0.2.0:
     resolution: {integrity: sha512-0mYKnYYe9ZcqMCWhUjItv/oHjvgEsfKvnUTg8sAtnHr3GVy7rGkXCb6d5cSyqrWqL4k81b9CPg3urd+T7aop3A==}
