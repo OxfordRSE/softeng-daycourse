@@ -2,7 +2,7 @@
 routeAlias: "continuous-integration"
 ---
 
-# Introduction to Continuous Integration (CI)
+# Continuous Integration (CI)
 
 - **Definition**: Continuous Integration (CI) is an automated process for verifying and integrating code changes.
 - **Objective**: To detect and resolve issues early by frequently testing and integrating code changes.
@@ -10,15 +10,31 @@ routeAlias: "continuous-integration"
 
 ---
 
-# Challenges Without CI
+# Continuous Integration (CI)
+
+<div class="h-6" />
+
+## Challenges Without CI
 
 - **Compatibility**: Ensuring code works across various OS, software versions, and hardware.
 - **Consistency**: Avoiding dependencies on specific user data or development machine configurations.
 - **Collaboration**: Managing code changes in tandem with other developers without conflict.
 
+<div class="h-6" />
+
+## Benefits of Implementing CI
+
+- **Efficiency**: Swift detection and resolution of integration issues.
+- **Quality Assurance**: Automated tests and builds ensure code quality and functionality.
+- **Reproducibility**: Standardised and automated build/deploy processes ensure consistent output.
+
 ---
 
-# Key Principles of CI
+# Continuous Integration (CI)
+
+<div class="h-6" />
+
+## Key Principles
 
 - **Single Source Repository**: Maintain all code and dependencies in a shared repository.
 - **Automate the Build**: Automatically compile, package, and create installers for code.
@@ -60,14 +76,6 @@ routeAlias: "continuous-integration"
 *Note*: Each tool has unique and common features. Exploring multiple options is advised.
 
 ---
-
-# Benefits of Implementing CI
-
-- **Efficiency**: Swift detection and resolution of integration issues.
-- **Quality Assurance**: Automated tests and builds ensure code quality and functionality.
-- **Reproducibility**: Standardised and automated build/deploy processes ensure consistent output.
-
----
 layout: instruction
 ---
 
@@ -88,10 +96,9 @@ layout: instruction
 ::right::
 
 Follow-along:
-- Add continuous integration to the repository (*Action: “Python Application” [flake8, pytest]*)
-- Submit another pull request for your feature branch to your own main branch
-- Add commits to the feature branch that first break, then fix the tests
-- Explore Action reports
+- Add continuous integration to your repository (*Action: “Python Application” [flake8, pytest]*)
+- Push changes to your repository
+- (Optional) Make a change that breaks your tests, then fix them
 
 ---
 layout: two-cols-header
@@ -173,7 +180,10 @@ on:
 
 Task:
 - Add test matrix
-- Re-run tests
+- Add `workflow_dispatch` trigger to your workflow (this allows you to run the action manually)
+- Re-run your tests
+
+<!-- You now have the foundation of any Python package! -->
 
 ---
 

@@ -101,7 +101,7 @@ layout: two-cols-header
 
 ::right::
 
-<!-- <img src="../img/version-control-reproducibility.png" alt="Version control reproducibility"> -->
+<img src="../img/version-control-reproducibility.png" alt="Version control reproducibility" width="80%"/>
 
 ---
 layout: two-cols-header

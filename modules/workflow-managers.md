@@ -116,7 +116,7 @@ rule count_words:
     input:
         "data/doc.txt"
     output:
-        "output/doc.txt"
+        "output/wc.txt"
     shell:
         """
         python count_words.py -in {input} -out {output}
@@ -130,7 +130,7 @@ rule count_words:
 ```mermaid
 graph LR
     A[ ]:::hidden --"data/doc.txt"--> B[count_words]
-    B --"output/doc.txt"--> C[words_chart]
+    B --"output/wc.txt"--> C[words_chart]
     C --"word_count.txt"--> D([ ]):::hidden
     style A stroke-dasharray: 5 5, fill-opacity:0, stroke-opacity:0;
     style C stroke-dasharray: 5 5
@@ -154,7 +154,7 @@ Translated to Snakemake:
 ```python
 rule words_chart:
     input:
-        "output/doc.txt"
+        "output/wc.txt"
     output:
         "words_chart.txt"
     script:
@@ -168,7 +168,7 @@ rule words_chart:
 ```mermaid
 graph LR
     A[ ]:::hidden --"data/doc.txt"--> B[count_words]
-    B --"output/doc.txt"--> C[words_chart]
+    B --"output/wc.txt"--> C[words_chart]
     C --"word_count.txt"--> D([ ]):::hidden
     style A stroke-dasharray: 5 5, fill-opacity:0, stroke-opacity:0;
     style D stroke-dasharray: 5 5, fill-opacity:0, stroke-opacity:0;
@@ -212,7 +212,7 @@ rule words_chart:
 
 <v-click>
 ```bash
-snakemake --snakefile onefile.smk
+snakemake --snakefile onefile.smk --cores 1
 ```
 
 Open `words_chart.txt` to see the results.
@@ -355,7 +355,7 @@ class: "gap-4"
 ::left::
 
 ```bash
-snakemake --snakefile multiplefiles.smk
+snakemake --snakefile multiplefiles.smk --cores all
 ```
 
 <div class="h-10" />

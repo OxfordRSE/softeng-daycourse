@@ -65,7 +65,7 @@ layout: instruction
 ::left::
 
 ::center
-Pull Request
+Contribute code: Pull Requests
 ::
 
 ::right::
@@ -73,14 +73,10 @@ Pull Request
 Instructor demo / follow-along:
 - Fork repository<br />
   <small>[github.com/OxfordRSE/softeng-daycourse-zoo](https://github.com/OxfordRSE/softeng-daycourse-zoo)</small>
-- Open in codespaces (git clone)
-- Create a feature branch
-
-Instructor demo:
-- Submit a Pull Request
-
-Task:
-- Add a file containing a function
+- Open in codespaces (mimics `git clone`)
+- Create a feature branch (`git switch -c my-animal`)
+- Add an animal to the zoo
+- Stage, commit (to feature branch)
 - Submit a Pull Request
 
 ---
@@ -124,22 +120,5 @@ Instructor demo:
 - Code Review
 
 Task:
-- Add a test function *in the same feature branch*, testing locally to ensure that it passes before commiting
+- Add a test *in the same feature branch*, testing locally to ensure that it passes before commiting
 - Navigate to your pull request, notice that your PR has been updated with your test code
-
----
-layout: instruction
----
-
-# Pull Requests
-
-::left::
-
-::center
-Clone and test manually
-::
-
-::right::
-
-Instructor demo:
-- Check tests in another repository
