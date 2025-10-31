@@ -282,23 +282,48 @@ transition: "none"
 ::center
 
 <v-click>
-<i>
 When working with a <b>legacy</b> codebase,
 <br />start with a few <b>regression tests</b> to ensure
 <br />that the output is not changing.
-</i>
 </v-click>
 
 <br />
 
 <v-click>
-<i>
 <br />Then, start adding <b>unit tests</b> for
 <br />new features or bug fixes.
-</i>
+</v-click>
+
+---
+transition: "none"
+---
+
+# Automated Testing
+
+<div class="text-gray-400">
+<b>Unit tests</b>: Test specific units of functionality, ensuring expected outputs from given inputs.
+
+<b>Integration (functional) tests</b>: Test functional paths through the code, especially useful for exposing faults in unit interactions.
+</div>
+
+<b>Regression tests</b>: Ensure unchanged program output despite code modifications.
+
+::center
+
+<br />When working with <b>AI</b>, verify the code
+<br />behaves as expected with <b>tests</b>.
+
+<v-click>
+<br />When relying heavily on AI,
+<br />allow it to write <i><b>either</b></i> code <b><i>or</i></b> some tests.
+<br />Not both - this defeats the purpose of testing!
 </v-click>
 
 ::
+
+<!--
+AI-generated tests can be trivial or miss important edge cases
+-->
 
 ---
 
@@ -307,14 +332,15 @@ When working with a <b>legacy</b> codebase,
 pytest: a framework for automated testing
 - Automatically finds any function starting in `test_` or ends in `_test`
 - Produces a report indicating test status
-- Many advanced features (e.g. mocks, fixtures)
+- Many advanced features (e.g. exception testing, mocks, fixtures)
 - Install with `pip install pytest`
 - Run with `pytest` (or `pytest -v` for an itemised view)
 
 Testing investment should match the software's complexity and usage
 
 <!--
-PyTest provides a convenient report across all tests
+Rather than managing tests manually, PyTest provides a convenient package to collate
+and run tests across a codebase, producing a reports with their status.
 -->
 
 ---

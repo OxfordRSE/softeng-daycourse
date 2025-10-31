@@ -92,6 +92,7 @@ class: "gap-4"
 - Cost-effective error removal
 - Enhances team learning and collaboration
 - Improves overall team software development process
+- Increasingly, AI 'reviewers' are able to check your code for common issues, _but_ human review is still essential to provide context and understanding
 
 ::right::
 

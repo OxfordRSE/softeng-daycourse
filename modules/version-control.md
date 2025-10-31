@@ -8,6 +8,8 @@ routeAlias: "version-control"
 
 ::left::
 
+<div class="h-5" />
+
 - *Version control* provides a full history of your project's software and other assets
 - Makes for easy:
   - Backups
@@ -36,7 +38,7 @@ routeAlias: "version-control"
 whatever else you might be doing with a computer,<br>
 it’s not science."</i><br>
 <br>
-Greg Wilson, SWC
+Greg Wilson, SWC<br/><div style="font-size: 0.8rem;"><i>First Executive Director of Software Carpentry</i></div>
 
 ::
 

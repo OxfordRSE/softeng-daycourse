@@ -142,9 +142,36 @@ layout: instruction
 
 ::left::
 
-<div class="text-sm">
-<i>Example:</i>
-</div>
+
+```yaml
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+            os: [ubuntu-latest, windows-latest, macos-latest]
+            python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+```
+
+and
+
+```yaml
+    - name: Install dependencies
+      shell: bash                      # add this line
+      run: |
+```
+
+::right::
+
+- Add test matrix
+
+_Example_
 
 <div class="text-sm w-full max-w-[80%] mx-auto leading-none table-tight">
 
@@ -155,33 +182,7 @@ layout: instruction
 | python 3.11 | ✅ | ❌ | ✅ |
 | python 3.12 | ✅ | ❌ | ✅ |
 
-<div class="h-5" />
-
 </div>
-
-```yaml
-jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-        matrix:
-            os: [ubuntu-latest, windows-latest, macos-latest]
-            python-version: [3.9, 3.10, 3.11, 3.12]
-```
-
-<div class="absolute border border-gray-400 left-85 top-90">
-```yaml
-on:
-  workflow_dispatch:
-```
-</div>
-
-::right::
-
-Task:
-- Add test matrix
-- Add `workflow_dispatch` trigger to your workflow (this allows you to run the action manually)
-- Re-run your tests
 
 <!-- You now have the foundation of any Python package! -->
 

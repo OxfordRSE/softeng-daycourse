@@ -55,6 +55,12 @@ rightClass: "items-center justify-center gap-10"
 <small>(year.month)</small>
 </div>
 
+<!---
+- Explain major, minor, patch version numbers here
+- Explain calendar versioning
+- Explain why we would use one over the other
+-->
+
 ---
 layout: two-cols-header
 ---
@@ -101,16 +107,27 @@ def main():
 **numpy** is a top-20 downloaded package on PyPI<br>
 which in June 2024 released a new major version.
 
+<v-click>
+
 Numpy v1 and v2 were no longer entirely compatible.
+
+</v-click>
+
+<v-click>
 
 The official release notes included the phrase:
 
-_“This major release includes <span v-mark.circle.red="1">breaking changes</span>…<br>
-including an ABI break …<br>
-and API changes …”_
+_“This major release includes <span v-mark.circle.red="3">breaking changes</span>…<br>
+including API changes …”_
+
+</v-click>
 
 <!--
-In the example given an informative error is provided to the user. However, some changes may be more surruptitious, such as rules over type promotion (float32 may be returned instead of float64 now when mixing types in expressions).
+In the example given an informative error is provided to the user. However, some changes may be more surreptitious, such as rules over type promotion (float32 may be returned instead of float64 now when mixing types in expressions).
+
+API = Application Programming Interface, the function signature, how you interact with the library.
+
+Code written in one major may not work in another major version. How do we manage old and new codebases that rely on different versions of the same library?
 -->
 
 ::

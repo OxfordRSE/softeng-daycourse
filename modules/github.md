@@ -191,13 +191,18 @@ Create a new repository, clone and push changes
 
 ::right::
 
+::small
+
 Instructor follow-along:
 
 - Create a new repository (Github interface)
   - Add a README.md, .gitignore and select a license
-- Open the repository in Codespaces
-  - This mimics `git clone` on your local machine (see <Link to="reference-material" title="Reference material" />)
-- Add a file, stage and commit
-- Push changes to Github: `git push`
-- Explore commit history (Github interface)
-- (Optional) Practice creating and pushing a new branch
+- Open the repository in Codespaces (this mimics `git clone` on your local machine, see <Link to="reference-material" title="Reference material" />)
+  - Add a file, stage and commit
+  - Push changes to Github: `git push`
+- On the Github interface:
+  - Explore the commit history
+  - Create an Issue and assign yourself to work on it
+- (Optional) Create and push a new branch from codespaces, then switch between branches on Github
+
+::

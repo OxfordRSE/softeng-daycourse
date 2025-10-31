@@ -74,7 +74,7 @@ class: gap-4
 
 ```python
 def convert(x):
-	return 32 + 1.8 * x
+	...
 ```
 
 ::right::
@@ -82,8 +82,122 @@ def convert(x):
 <v-click>
 ```python
 def celsius_to_fahrenheit(celsius):
-    return 32 + 1.8 * celsius
+    ...
 ```
+</v-click>
+
+---
+layout: two-cols-header
+class: gap-4
+---
+
+# Writing Clean Code
+### Use meaningful names - _provides context for AI..._
+
+::left::
+
+```python
+def convert(x):
+	if isinstance(x, str):
+        return x.upper()
+    elif isinstance(x, int):
+        return x * 2
+    elif isinstance(x, list):
+        return [convert(i) for i in x]
+    else:
+        return None
+```
+
+::right::
+
+```python
+def celsius_to_fahrenheit(celsius):
+    """Convert Celsius to Fahrenheit."""
+    return (celsius * 9/5) + 32
+```
+
+<v-click>
+
+- Meaningful names help *us* understand the code
+- But they also provide context to AI models
+- Thus, AI models can provide better suggestions
+
+</v-click>
+
+---
+layout: two-cols-header
+class: gap-4
+---
+
+# Writing Clean Code
+### But context can also be a constraint for AI...
+
+::left::
+
+```python
+def levenshtein(a, b):
+```
+
+produces
+
+```python {*}{maxHeight:'280px'}
+def levenshtein(a, b):
+    """Compute the Levenshtein distance
+       between two strings."""
+
+    if len(a) < len(b):
+        return levenshtein(b, a)
+
+    if len(b) == 0:
+        return len(a)
+
+    previous_row = range(len(b) + 1)
+    for i, c1 in enumerate(a):
+        current_row = [i + 1]
+        for j, c2 in enumerate(b):
+            insertions = previous_row[j + 1] + 1
+            deletions = current_row[j] + 1
+            substitutions = previous_row[j] \
+                + (c1 != c2)
+            current_row.append(
+                min(
+                    insertions,
+                    deletions,
+                    substitutions
+                )
+            )
+        previous_row = current_row
+
+    return previous_row[-1]
+```
+
+::right::
+
+<v-click>
+
+```python
+from Levenshtein import distance
+
+def levenshtein(a, b):
+```
+
+</v-click>
+
+<v-click>
+
+makes appropriate use of the imported library:
+
+```python
+def levenshtein(a, b):
+    return distance(a, b)
+```
+
+</v-click>
+
+<v-click>
+
+_AI (re)-invented the algorithm because it was constrained to the script context_
+
 </v-click>
 
 ---
@@ -113,8 +227,10 @@ snake_case
 </div>
 
 ---
+layout: two-cols-header
+---
 
-# Documentation
+# Writing Clean Code
 
 ### Linters
 - Compares your code to a standard (e.g. PEP)
@@ -122,31 +238,101 @@ snake_case
 
 <div class="h-5" />
 
+::left::
 
-::center
-<div class="absolute top-60" v-click.hide at="1">
-<img src="../img/linter.png" alt="Linter example" width="60%" />
+<style>
+code {
+    font-size: 1.2rem;
+    line-height: 2.0;
+}
+</style>
+
+```python
+import os
+
+def hello():
+    print(name)
+```
+
+::right::
+
+<div class="h-2" />
+
+<div class="twoslash lsp">
+  <div class="twoslash-error-line twoslash-error-level-warning">
+    <div class="twoslash-popup">
+      <div class="twoslash-popup-content">
+        <div>'os' imported but unused</div>
+      </div>
+    </div>
+  </div>
 </div>
-::
 
+<div class="h-7" />
 
-<v-click at="1">
+<div class="twoslash lsp">
+  <div class="twoslash-error-line">
+    <div class="twoslash-popup">
+      <div class="twoslash-popup-content">
+        <div>expected 2 blank lines, found 1</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="twoslash lsp">
+  <div class="twoslash-error-line">
+    <div class="twoslash-popup">
+      <div class="twoslash-popup-content">
+        <div>undefined name 'name'</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+# Writing Clean Code
 
 ### Auto-formatters
-- Applies stylistic conventions, e.g.
-  ```python
-  dict.get(v1+v2*dict[‘key’])
-  ```
-    becomes
-  ```python
-  dict.get(v1 + v2 * dict["key"])
-             ^ ^  ^ ^     ^   ^
-  ```
+- Applies stylistic conventions
+
+<div class="flex justify-center">
+<div class="w-1/2 p-4">
+```python
+def calc(a,b,c=2):
+ x=a+b+c
+ y=( a+b+c)/ 3 
+ return  { "sum":x ,"avg":y }
+
+nums=[1,2,3]
+out=calc(   nums [0],nums [1] ,c = 5  )
+print( out )
+```
+</div>
+<div class="w-1/2 p-4">
+```python
+def calc(a, b, c=2):
+    x = a + b + c
+    y = (a + b + c) / 3 
+    return {"sum": x, "avg": y}
+
+
+nums = [1, 2, 3]
+out = calc(nums[0], nums[1], c=5)
+print(out)
+```
+</div>
+</div>
+
+
+<v-clicks>
+
 - Saves time
 - You don’t have to worry about remembering all of the rules
 - Reduces decision making
 
-</v-click>
+</v-clicks>
 
 ---
 layout: two-cols-header
@@ -239,6 +425,8 @@ def add3(a, b, c):
 ```
 </div>
 
+<small><i>A potential use for AI</i></small>
+
 ::right::
 
 <div class="p-4">
@@ -260,16 +448,46 @@ add3(a, b, c)
 </div>
 
 ---
+transition: none
+---
 
 # Writing Clean Code
-### Documentation - annotations
+### Documentation - scaffolding
 
 
 <br>
 
 <div class="flex justify-center">
     <div class="w-3/4 p-4">
-A not so useful example:
+Using annotations to scaffold code:
+
+```python
+# Read data from file
+...
+
+# Calculate word count and add 10
+...
+
+
+# Print final word count
+...
+```
+    </div>
+</div>
+
+---
+transition: none
+---
+
+# Writing Clean Code
+### Documentation - scaffolding
+
+
+<br>
+
+<div class="flex justify-center">
+    <div class="w-3/4 p-4">
+Using annotations to scaffold code:
 
 ```python
 # Read data from file
@@ -282,8 +500,32 @@ word_count = word_count + 10
 # Print final word count
 print(word_count)
 ```
+<i><small>AI can use this scaffolding to suggest code</small></i>
     </div>
 </div>
+
+
+---
+
+# Writing Clean Code
+### Documentation - scaffolding
+
+
+
+<br>
+
+<div class="flex justify-center">
+    <div class="w-3/4 p-4">
+Tidy-up - <small><i>consolidate comments:</i></small>
+
+```python
+# Report word count
+data = read_data(filename)
+word_count = calculate_word_count(data)
+word_count = word_count + 10
+print(word_count)
+```
+</div></div>
 
 ---
 
@@ -324,6 +566,106 @@ explain <b>why</b> <i>(provide context)</i>
 - Break long functions into smaller functions
 - Easier to replace smaller functions when new methods become available
 - Rule of thumb: functions should not be too long
+
+---
+layout: "two-cols-header"
+---
+
+# Writing Clean Code
+### Single responsibility principle
+
+::left::
+
+<div class="p-4 pt-0" >
+
+One large script
+
+```python {*}{maxHeight:'340px'}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from scipy.stats import ttest_ind
+
+# 1. Load data
+df = pd.read_csv("gene_expression.csv")
+
+# 2. Preprocess
+df = df.dropna()
+df = df[df['quality'] > 0.8]
+
+# 3. Perform PCA
+pca = PCA(n_components=2)
+pca_result = pca.fit_transform(df.iloc[:, 2:])
+
+# 4. Statistical test
+group1 = df[df['condition'] == 'treated']
+group2 = df[df['condition'] == 'control']
+p_value = ttest_ind(group1['geneX'], group2['geneX'])[1]
+
+# 5. Plot results
+sns.scatterplot(x=pca_result[:, 0], y=pca_result[:, 1])
+plt.title("PCA of Gene Expression")
+plt.show()
+
+# 6. Save report
+with open("report.txt", "w") as f:
+    f.write(f"P-value for geneX: {p_value}")
+```
+
+</div>
+
+::right::
+
+<div class="p-4 pt-0">
+
+Re-focus on logic (not implementation)
+
+```python
+df = load_and_clean("gene_expression.csv")
+pca_result = run_pca(df)
+p_value = run_ttest(df, "geneX")
+plot_pca(pca_result)
+write_report(p_value)
+```
+
+```python
+def load_and_clean(filename)
+def run_pca(df)
+def run_ttest(df, gene)
+def plot_pca(pca_result)
+def write_report(p_value)
+```
+
+<div class="list-disc space-y-0 leading-tight">
+<ul>
+  <li v-click>Easier to read</li>
+  <li v-click>Implementation can be updated without affecting core logic</li>
+  <li v-click>Promotes re-use of code</li>
+</ul>
+</div>
+
+</div>
+
+---
+
+# Writing Clean Code
+
+### Coding with AI:
+
+<div class="h-4" />
+
+- AI _can_ be very helpful in checking the logic, consistency and overall correctness of your code
+- AI _can_ help to restructure long scripts into shorter, more modular functions
+- AI _can_ help spot (and fix) bugs in your code
+- **BUT** AI _does not have your understanding of the problem_, and may just as easily introduce bugs
+- AI can restructure your code, but in-so-doing change the logic in subtle ways that prevent it from working as intended
+<v-clicks>
+
+- Always review AI-generated code carefully
+- Test thoroughly!
+
+</v-clicks>
 
 ---
 
