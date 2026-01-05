@@ -660,6 +660,26 @@ def write_report(p_value)
 - AI _can_ help spot (and fix) bugs in your code
 - **BUT** AI _does not have your understanding of the problem_, and may just as easily introduce bugs
 - AI can restructure your code, but in-so-doing change the logic in subtle ways that prevent it from working as intended
+
+---
+
+# Writing Clean Code
+
+### Coding with AI:
+
+<div class="h-4" />
+
+::center
+
+**Professional Software Developers Don’t Vibe, They Control:<br />
+AI Agent Use for Coding in 2025**
+
+Through field observations (N=13) and qualitative surveys (N=99), we find that while<br/><b>experienced developers value agents as a productivity boost,<br />they retain their agency in software design and implementation</b><br/>out of insistence on fundamental software quality attributes, employing<br/>strategies for controlling agent behavior leveraging their expertise.
+
+[Huang et al. 2025](https://arxiv.org/html/2512.14012v1)
+
+::
+
 <v-clicks>
 
 - Always review AI-generated code carefully
